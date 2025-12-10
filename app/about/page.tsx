@@ -16,7 +16,9 @@ import {
   GraduationCap,
   Network,
   CheckCircle2,
+  Menu,
 } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Card,
   CardContent,
@@ -30,15 +32,17 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-[#142019] min-h-screen">
       {/* Navigation */}
-      <nav className="w-full bg-[#142019] my-10">
-        <div className="max-w-7xl mx-auto px-6 py-4 my-6 flex justify-between items-center border-b border-white">
+      <nav className="w-full bg-[#142019] my-4 md:my-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 my-4 md:my-6 flex justify-between items-center border-b border-white">
           <Link href="/" className="flex items-center gap-3 group">
             <div>
-              <span className="font-bold text-white hover:text-white text-[18px] block">
+              <span className="font-bold text-white hover:text-white text-base md:text-[18px] block">
                 IMUI
               </span>
             </div>
           </Link>
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">
             <Link
               href="/about"
@@ -76,29 +80,79 @@ export default function AboutPage() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
             </Link>
           </div>
+
+          {/* Mobile Navigation */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden text-white hover:bg-white/10"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-[300px] bg-[#142019] border-l border-white/20"
+            >
+              <div className="flex flex-col gap-6 mt-8">
+                <Link
+                  href="/about"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/#dimensions"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  Dimensions
+                </Link>
+                <Link
+                  href="/overview"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href="/#faq"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="/#contact"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  Contact
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[400px] p-20 bg-[#142019] my-10 overflow-hidden rounded-[60px] m-20">
-        <div className="absolute inset-0 rounded-[60px]">
+      <section className="relative min-h-[300px] md:min-h-[400px] p-8 md:p-12 lg:p-20 bg-[#142019] my-4 md:my-10 overflow-hidden rounded-2xl md:rounded-[60px] mx-4 md:mx-8 lg:mx-20">
+        <div className="absolute inset-0 rounded-2xl md:rounded-[60px]">
           <Image
             src="/bg.png"
             alt="IMUI"
             fill
-            className="object-cover opacity-90 rounded-[20px]"
+            className="object-cover opacity-90 rounded-xl md:rounded-[20px]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[black]/100 via-[black]/30 to-[black]/90"></div>
         </div>
 
-        <div className="relative h-full flex items-center justify-center text-center mx-auto px-6 z-10">
+        <div className="relative h-full flex items-center justify-center text-center mx-auto px-4 md:px-6 z-10 py-8 md:py-12">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
               About the Institute of
               <br />
               <span className="text-white">Mindful Urban Innovation</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mb-4 md:mb-8 max-w-3xl mx-auto px-2">
               A specialised urban research and policy institution dedicated to
               advancing the Mindfulness City model
             </p>

@@ -17,7 +17,9 @@ import {
   Play,
   ArrowRight,
   HelpCircle,
+  Menu,
 } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
@@ -48,15 +50,17 @@ export default function Home() {
   return (
     <div className="w-full  bg-[#142019]">
       {/* Navigation */}
-      <nav className="  w-full bg-[#142019] my-10">
-        <div className="max-w-7xl mx-auto px-6 py-4 my-6 flex justify-between items-center border-b border-white">
+      <nav className="w-full bg-[#142019] my-4 md:my-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 my-4 md:my-6 flex justify-between items-center border-b border-white">
           <Link href="/" className="flex items-center gap-3 group">
             <div>
-              <span className="font-bold text-white hover:text-white text-[18px]  block">
+              <span className="font-bold text-white hover:text-white text-base md:text-[18px] block">
                 IMUI
               </span>
             </div>
           </Link>
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">
             <Link
               href="/about"
@@ -74,7 +78,7 @@ export default function Home() {
             </Link>
             <Link
               href="/overview"
-              className="text-white hover:text-white text-[18px]  font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-white text-[18px] font-medium transition-colors duration-200 relative group"
             >
               Dashboard
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#142019] group-hover:w-full transition-all duration-300"></span>
@@ -94,39 +98,89 @@ export default function Home() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#142019] group-hover:w-full transition-all duration-300"></span>
             </Link>
           </div>
+
+          {/* Mobile Navigation */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden text-white hover:bg-white/10"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-[300px] bg-[#142019] border-l border-white/20"
+            >
+              <div className="flex flex-col gap-6 mt-8">
+                <Link
+                  href="/about"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  About
+                </Link>
+                <Link
+                  href="#dimensions"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  Dimensions
+                </Link>
+                <Link
+                  href="/overview"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href="#faq"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="#contact"
+                  className="text-white hover:text-white text-lg font-medium transition-colors duration-200 py-2 border-b border-white/10"
+                >
+                  Contact
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative  min-h-[100px] p-20 bg-[#142019] my-10 overflow-hidden rounded-[60px]   m-20">
-        <div className="absolute inset-0 rounded-[60px]">
+      <section className="relative min-h-[250px] md:min-h-[400px] p-8 md:p-12 lg:p-20 bg-[#142019] my-4 md:my-10 overflow-hidden rounded-2xl md:rounded-[60px] mx-4 md:mx-8 lg:mx-20">
+        <div className="absolute inset-0 rounded-2xl md:rounded-[60px]">
           <Image
             src="/bg.png"
             alt="Mindfulness City Framework"
             fill
-            className="object-cover opacity-90 rounded-[20px] "
+            className="object-cover opacity-90 rounded-xl md:rounded-[20px]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[black]/100 via-[black]/30 to-[black]/90"></div>
         </div>
 
-        <div className="relative h-full flex items-center justify-center text-center mx-auto px-6 z-10">
+        <div className="relative h-full flex items-center justify-center text-center mx-auto px-4 md:px-6 z-10 py-8 md:py-12">
           <div className="animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Institute of Mindful
               <br />
               <span className="text-white">Urban Innovation</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mb-6 md:mb-8 max-w-3xl mx-auto px-2">
               specialized urban research and policy institution dedicated to
               advancing the Mindfulness City model
             </p>
             <Link href="/overview">
               <Button
                 size="lg"
-                className="bg-white text-[#142019] hover:bg-gray-100 mt-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                className="bg-white text-[#142019] hover:bg-gray-100 mt-4 md:mt-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group text-sm md:text-base"
               >
                 Explore Dashboard
-                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </Link>
           </div>

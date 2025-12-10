@@ -16,7 +16,14 @@ import {
   TrendingUp,
   Play,
   ArrowRight,
+  HelpCircle,
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { frameworkData } from "@/lib/framework-data";
 import { dimensionColors } from "@/lib/config";
 import { cn } from "@/lib/utils";
@@ -46,13 +53,13 @@ export default function Home() {
           <Link href="/" className="flex items-center gap-3 group">
             <div>
               <span className="font-bold text-white hover:text-white text-[18px]  block">
-                Mindfulness City Index
+                IMUI
               </span>
             </div>
           </Link>
           <div className="hidden md:flex gap-8">
             <Link
-              href="#about"
+              href="/about"
               className="text-white hover:text-white text-[18px] font-medium transition-colors duration-200 relative group"
             >
               About
@@ -70,6 +77,13 @@ export default function Home() {
               className="text-white hover:text-white text-[18px]  font-medium transition-colors duration-200 relative group"
             >
               Dashboard
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#142019] group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link
+              href="#faq"
+              className="text-white hover:text-white text-[18px] font-medium transition-colors duration-200 relative group"
+            >
+              FAQ
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#142019] group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link
@@ -98,13 +112,13 @@ export default function Home() {
         <div className="relative h-full flex items-center justify-center text-center mx-auto px-6 z-10">
           <div className="animate-fade-in-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Comprehensive Mindfulness
+              Institute of Mindful
               <br />
-              <span className="text-white">Indicator Framework</span>
+              <span className="text-white">Urban Innovation</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl mx-auto">
-              Ranked #1 Framework for Tracking City-Wide Mindfulness and
-              Well-being Indicators
+              specialized urban research and policy institution dedicated to
+              advancing the Mindfulness City model
             </p>
             <Link href="/overview">
               <Button
@@ -123,9 +137,10 @@ export default function Home() {
       <section className="bg-[#142019] text-white py-20 pb-40 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <p className="text-center text-xl md:text-2xl mb-16 max-w-3xl mx-auto leading-relaxed">
-            At Mindfulness City, we strive to cultivate mindful communities that
-            will navigate change and steer toward the creation of well-being for
-            the whole of society.
+            urban ecosystem that supports residents' wellbeing, strengthens
+            communities, upholds ethical governance across economic clusters,
+            and fosters sustainability and ecological balance, creating a clean,
+            green, safe, and happy city.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -650,6 +665,166 @@ export default function Home() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="p-2 bg-[#286D28]/10 rounded-lg">
+                <HelpCircle className="h-8 w-8 text-[#286D28]" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#142019]">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <p className="text-lg text-[hsl(var(--body-text))] max-w-2xl mx-auto">
+              Learn more about the Institute of Mindful Urban Innovation and the
+              Mindfulness City framework
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem
+                value="item-1"
+                className="bg-white border-2 border-gray-200 rounded-lg px-6 hover:border-[#286D28]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <h3 className="text-xl font-bold text-[#142019] pr-4">
+                    What is the Institute of Mindful Urban Innovation (IMUI)?
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-base text-[hsl(var(--body-text))] leading-relaxed">
+                    IMUI is a specialised urban research and policy institute
+                    that supports the Mindfulness City model. It has three
+                    divisions that work on urban innovation and governance
+                    research, mindful city monitoring and evaluation, and global
+                    collaboration and outreach. Its mission is to help cities
+                    become cleaner, greener, safer, and more liveable by
+                    promoting mindfulness at the individual, community,
+                    governance, and ecological levels.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-2"
+                className="bg-white border-2 border-gray-200 rounded-lg px-6 hover:border-[#286D28]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <h3 className="text-xl font-bold text-[#142019] pr-4">
+                    What is a "Mindful City" according to IMUI?
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-base text-[hsl(var(--body-text))] leading-relaxed">
+                    A Mindful City is an urban ecosystem that actively supports
+                    residents' wellbeing, strengthens communities, ensures
+                    ethical and transparent governance across economic sectors,
+                    and protects the environment. In simple terms, it's a city
+                    designed to be clean, green, safe, sustainable, and
+                    genuinely happy for the people who live there.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-3"
+                className="bg-white border-2 border-gray-200 rounded-lg px-6 hover:border-[#286D28]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <h3 className="text-xl font-bold text-[#142019] pr-4">
+                    What is the Mindfulness City framework and how is it
+                    structured?
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-base text-[hsl(var(--body-text))] leading-relaxed mb-4">
+                    The framework is a comprehensive tool to measure how
+                    "mindful" a city is. It is inspired by the Buddhist Mandala
+                    structure and Bronfenbrenner's Ecological Systems Theory,
+                    and is organised into 9 dimensions and 58 indicators across
+                    four levels:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 text-base text-[hsl(var(--body-text))] mb-4">
+                    <li>
+                      <strong className="text-[#142019]">Micro:</strong>{" "}
+                      Individual
+                    </li>
+                    <li>
+                      <strong className="text-[#142019]">Meso:</strong> Society
+                      and community
+                    </li>
+                    <li>
+                      <strong className="text-[#142019]">Exo:</strong>{" "}
+                      Governance and institutions
+                    </li>
+                    <li>
+                      <strong className="text-[#142019]">Macro:</strong> Ecology
+                      and the planet
+                    </li>
+                  </ul>
+                  <p className="text-base text-[hsl(var(--body-text))] leading-relaxed">
+                    It combines local values (GMC vision, GNH, Vajrayana
+                    mindfulness) with international standards (like SDG 11 and
+                    global city indices).
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-4"
+                className="bg-white border-2 border-gray-200 rounded-lg px-6 hover:border-[#286D28]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <h3 className="text-xl font-bold text-[#142019] pr-4">
+                    How does IMUI measure mindfulness in a city?
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-base text-[hsl(var(--body-text))] leading-relaxed">
+                    Most indicators (about 95%) are quantitative, such as
+                    measurable health, environment, or governance data. Some
+                    indicators—especially those about spirituality and
+                    subjective wellbeing—are based on people's perceptions and
+                    survey responses. These are collected through tools like
+                    surveys and could later be strengthened with
+                    neuroscience-based methods. The responses are then combined
+                    using expert-determined weights and an aggregation method to
+                    produce an overall Mindfulness Index score.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-5"
+                className="bg-white border-2 border-gray-200 rounded-lg px-6 hover:border-[#286D28]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <h3 className="text-xl font-bold text-[#142019] pr-4">
+                    How will the framework be implemented and evolve over time?
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-base text-[hsl(var(--body-text))] leading-relaxed">
+                    IMUI recommends that implementation and monitoring be done
+                    by an independent institute or company to ensure objectivity
+                    and transparency. There will be annual public reporting so
+                    stakeholders and citizens can see progress. The framework
+                    will be supported by an interactive dashboard for tracking
+                    indicators and guiding decisions, and over time it is
+                    intended to evolve into an international Mindful City Index
+                    that other cities around the world can adopt, benchmark
+                    against, and use for certification.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>

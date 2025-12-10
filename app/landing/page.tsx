@@ -1,7 +1,22 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, Users, Building2, Globe, ArrowRight, BarChart3, Map, TrendingUp } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  User,
+  Users,
+  Building2,
+  Globe,
+  ArrowRight,
+  BarChart3,
+  Map,
+  TrendingUp,
+} from "lucide-react";
 import { frameworkData } from "@/lib/framework-data";
 import { dimensionColors } from "@/lib/config";
 import { cn } from "@/lib/utils";
@@ -25,8 +40,9 @@ export default function LandingPage() {
             <span className="text-primary">Indicator Framework</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive dashboard for tracking and analyzing mindfulness indicators
-            across individual, social, governance, and ecological dimensions.
+            A comprehensive dashboard for tracking and analyzing mindfulness
+            indicators across individual, social, governance, and ecological
+            dimensions.
           </p>
           <div className="flex gap-4 justify-center pt-4">
             <Link href="/overview">
@@ -66,13 +82,17 @@ export default function LandingPage() {
                   <CardContent>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Categories</span>
+                        <span className="text-muted-foreground">
+                          Categories
+                        </span>
                         <span className="font-medium">
                           {dimension.categories.length}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Indicators</span>
+                        <span className="text-muted-foreground">
+                          Indicators
+                        </span>
                         <span className="font-medium">
                           {dimension.categories.reduce(
                             (acc, cat) => acc + cat.indicators.length,
@@ -155,4 +175,3 @@ export default function LandingPage() {
     </div>
   );
 }
-

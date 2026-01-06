@@ -145,6 +145,23 @@ export default function Home() {
                 >
                   Contact
                 </Link>
+                <div className="mt-4 pt-4 border-t border-white/20">
+                  <p className="text-white text-sm font-semibold mb-2">
+                    Contact
+                  </p>
+                  <a
+                    href="mailto:pdem.cnr@rub.edu.bt"
+                    className="text-white/80 hover:text-white text-sm transition-colors duration-200 block mb-1"
+                  >
+                    pdem.cnr@rub.edu.bt
+                  </a>
+                  <a
+                    href="tel:+97517329734"
+                    className="text-white/80 hover:text-white text-sm transition-colors duration-200 block"
+                  >
+                    +975 17329734
+                  </a>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
@@ -674,27 +691,26 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Framework Update 2025",
-                date: "coming soon",
-                desc: "Latest enhancements to indicator tracking and analytics",
+                title: "Mindfulness Framework",
+                date: "available now",
+                desc: "Indicators and framework for measuring mindfulness and well-being in the city",
                 color: "bg-blue-500",
-              },
-              {
-                title: "Well-being Metrics Release",
-                date: "coming soon",
-                desc: "New insights into community health and mindfulness",
-                color: "bg-[hsl(var(--chart-green))]",
+                link: "/mindfulness-framework.pdf",
               },
               {
                 title: "Annual Report Available",
-                date: "coming soon",
-                desc: "Comprehensive analysis of framework performance",
+                date: "available now",
+                desc: "Comprehensive analysis and reporting of GMC mindfulness metrics",
                 color: "bg-[#142019]",
+                link: "/gmc-index.pdf",
               },
             ].map((news, idx) => (
-              <article
+              <a
                 key={idx}
-                className="bg-white rounded-lg overflow-hidden border-2 border-[hsl(var(--border))] hover:border-[#142019] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer"
+                href={news.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg overflow-hidden border-2 border-[hsl(var(--border))] hover:border-[#142019] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer block"
               >
                 <div
                   className={`h-48 ${news.color} flex items-center justify-center relative overflow-hidden`}
@@ -712,12 +728,12 @@ export default function Home() {
                   <p className="text-sm text-[hsl(var(--body-text))] mb-4 line-clamp-2">
                     {news.desc}
                   </p>
-                  <button className="text-[#142019] text-sm font-semibold hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                  <div className="text-[#142019] text-sm font-semibold hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                     Read More
                     <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>
@@ -973,17 +989,25 @@ export default function Home() {
               <h3 className="font-bold text-white mb-4 text-lg">Contact</h3>
               <ul className="space-y-2 text-base">
                 <li>
-                  <Link
-                    href="#contact"
-                    className="hover:text-[#142019] transition-colors duration-200"
+                  <a
+                    href="mailto:pdem.cnr@rub.edu.bt"
+                    className="hover:text-white transition-colors duration-200"
                   >
-                    Get in Touch
-                  </Link>
+                    pdem.cnr@rub.edu.bt
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+97517329734"
+                    className="hover:text-white transition-colors duration-200"
+                  >
+                    +975 17329734
+                  </a>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="hover:text-[#142019] transition-colors duration-200"
+                    className="hover:text-white transition-colors duration-200"
                   >
                     Privacy Policy
                   </Link>
@@ -991,7 +1015,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="hover:text-[#142019] transition-colors duration-200"
+                    className="hover:text-white transition-colors duration-200"
                   >
                     Terms of Use
                   </Link>
